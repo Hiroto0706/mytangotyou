@@ -1,0 +1,15 @@
+.error{
+    font-size: 14px;
+    font-weight: normal;
+    color: red;
+}
+
+.wordlist{
+    display: flex;
+}
+
+.btn{
+    border: none;
+    background-color: transparent;
+    margin-left: 15px;
+}
