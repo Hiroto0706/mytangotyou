@@ -21,7 +21,7 @@
                     </form>
                 </li>
             @empty
-               <li>覚える単語がないよ！</li>
+               <li>覚える単語がありません。</li>
             @endforelse
         </ul>
         <script>
