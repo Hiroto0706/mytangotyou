@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WordController;
@@ -15,13 +15,13 @@ use App\Http\Controllers\WordController;
 */
 
 Route::get('/', [WordController::class, 'word'])
-    ->name('words.view');
+        ->name('words.view');
 
 Route::get('/words', [WordController::class, 'list'])
-    ->name('words.list');
+        ->name('words.list');
 Route::get('/words/{word}', [WordController::class, 'show'])
-    ->name('words.show')
-    ->where('word', '[0-9]+');
+        ->name('words.show')
+        ->where('word', '[0-9]+');
 
 Route::get('/words/create', [WordController::class, 'create'])
         ->name('words.create');

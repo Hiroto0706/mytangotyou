@@ -11,7 +11,6 @@
             @forelse ($words as $word)
                 <li class="wordlist">
                     <a href="{{route('words.show', $word)}}">
-                        <input type="checkbox" name="check">
                         {{$word->tango}}
                     </a>
                     <form method="post" action="{{route('words.destroy', $word)}}" id="delete_word">
