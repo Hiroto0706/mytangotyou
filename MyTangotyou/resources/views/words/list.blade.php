@@ -10,6 +10,11 @@
         <ul>
             @forelse ($words as $word)
                 <li class="wordlist">
+                    <form method="post">
+                        @csrf
+
+                        <input type="checkbox" id="word_check" name="word_class" {{old('word_class') == true ? 'checked' : '' }} action="{{route('words.check', $word)}}">
+                    </form>
                     <a href="{{route('words.show', $word)}}">
                         {{$word->tango}}
                     </a>
@@ -34,6 +39,13 @@
                     if(confirm('本当に削除しますか？')){
                         e.target.submit();
                     }
+                    return;
+                })
+
+                document.getElementById('word_check').addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    e.target.submit();
                     return;
                 })
             }

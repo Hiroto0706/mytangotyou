@@ -19,6 +19,9 @@ Route::get('/', [WordController::class, 'word'])
 
 Route::get('/words', [WordController::class, 'list'])
         ->name('words.list');
+Route::post('/words/{word}/check', [WordController::class, 'check'])
+        ->name('words.check')
+        ->where('word', '[0-9]+');
 Route::get('/words/{word}', [WordController::class, 'show'])
         ->name('words.show')
         ->where('word', '[0-9]+');
@@ -38,3 +41,4 @@ Route::patch('/words/{word}/update', [WordController::class, 'update'])
 Route::delete('/words/{word}/delete', [WordController::class, 'destroy'])
         ->name('words.destroy')
         ->where('word', '[0-9]+');
+
