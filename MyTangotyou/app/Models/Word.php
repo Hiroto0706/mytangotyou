@@ -13,5 +13,6 @@ class Word extends Model
         'WordClass',
         'tango',
         'meaning',
+        'checkword',
     ];
 }

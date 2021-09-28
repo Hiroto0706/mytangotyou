@@ -10,10 +10,10 @@
         <ul>
             @forelse ($words as $word)
                 <li class="wordlist">
-                    <form method="post">
-                        @csrf
-
-                        <input type="checkbox" id="word_check" name="word_class" {{old('word_class') == true ? 'checked' : '' }} action="{{route('words.check', $word)}}">
+                    <form>
+                        <button method="post" action="{{route('words.check', $word)}}" id="check_word">
+                            <input type="checkbox" id="checkword" value="{{$word->checkword}}" {{old('checkword', $word->checkword) == 1 ? "checked" : ""}}>
+                        </button>
                     </form>
                     <a href="{{route('words.show', $word)}}">
                         {{$word->tango}}
@@ -42,12 +42,16 @@
                     return;
                 })
 
-                document.getElementById('word_check').addEventListener('submit', e => {
-                    e.preventDefault();
+        //         function myfunc(value) {
 
-                    e.target.submit();
-                    return;
-                })
+        //         if(checkword.value){
+        //             document.getElementById('checkword').value = 1;
+        //         }else{
+        //             document.getElementById('checkword').value = 0;
+        //         }
+
+        //         return;
+        // }
             }
         </script>
 </x-layout>

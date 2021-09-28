@@ -18,7 +18,6 @@ class CreateWordsTable extends Migration
             $table->string('WordClass');//品詞
             $table->string('tango');//覚えたい単語
             $table->text('meaning');//単語の意味
-            $table->boolean('check');//覚えた単語につけるチェック
             $table->timestamps();
         });
     }

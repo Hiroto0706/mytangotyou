@@ -70,9 +70,10 @@ class WordController extends Controller
             ->route('words.list');
     }
 
-    public function check(Request $request, Word $word)
+    public function check(WordRequest $request, Word $word)
     {
-        $word->check = $request->word_check;
+        $word->checkword = $request->checkword;
+
         $word->save();
 
         return redirect()
