@@ -11,9 +11,6 @@
             @forelse ($words as $word)
                 <li class="wordlist">
                     <form>
-                        <button method="post" action="{{route('words.check', $word)}}" id="check_word">
-                            <input type="checkbox" id="checkword" value="{{$word->checkword}}" {{old('checkword', $word->checkword) == 1 ? "checked" : ""}}>
-                        </button>
                     </form>
                     <a href="{{route('words.show', $word)}}">
                         {{$word->tango}}
